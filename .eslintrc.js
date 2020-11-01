@@ -1,25 +1,31 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    browser: true,
+    node: false
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'babel-eslint'
   },
+  extends: [
+    'plugin:vue/recommended', // /base, /essential, /strongly-recommended, /recommended
+    '@vue/prettier'
+  ],
+  // required to lint *.vue files
+  plugins: ['vue', 'prettier'],
+  // add your custom rules here
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off"
-  },
-  overrides: [
-    {
-      files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)"
-      ],
-      env: {
-        jest: true
+    'prettier/prettier': [
+      // customizing prettier rules (not many of them are customizable)
+      'error',
+      {
+        singleQuote: true,
+        semi: false,
+        tabWidth: 2
       }
-    }
-  ]
-};
+    ],
+    'no-console': 'off',
+    'no-undef': 'off',
+    'vue/no-v-html': 'off'
+  }
+}

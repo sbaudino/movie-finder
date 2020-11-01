@@ -1,0 +1,11 @@
+/* purgecss start ignore */
+
+/* theme color */
+$--color-primary: #f79820;
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+// TODO purge not used elements
+@import "~element-ui/packages/theme-chalk/src/index";
+/* purgecss end ignore */
