@@ -6,7 +6,7 @@ class ApiClient {
   }
 
   searchByTitle(params) {
-      return this.request.call({method: 'GET', params})
+    return this.request.call({ method: 'GET', params })
   }
 }
 

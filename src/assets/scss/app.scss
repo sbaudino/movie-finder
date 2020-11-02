@@ -5,8 +5,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
-.highlight {
-  @apply text-green font-medium;
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
 }

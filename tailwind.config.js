@@ -13,7 +13,8 @@ module.exports = {
       grey: '#A3AEBF',
       darkGrey: '#5A6E8B',
       borderGrey: '#DDE6EE',
-      lightGrey: '#FDFDFD'
+      lightGrey: '#FAFAFA',
+      transparentBlack: '#15212733'
     },
     extend: {
       height: {
@@ -25,8 +26,6 @@ module.exports = {
         imageSmall: '200px'
       },
       maxWidth: {
-        input: '220px',
-        image: '400px',
         block: '600px'
       }
     }
