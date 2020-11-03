@@ -4,6 +4,8 @@ This is a demo of the company's internal webapp where the user can find movies b
 
 Mobile and desktop versions are available.
 
+You can see a live demo at https://movie-finder-lovetoknow.netlify.app/
+
 ## Tech
 
 The main purprose here is to write good code, and of course learn. You'll find
