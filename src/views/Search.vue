@@ -3,13 +3,11 @@ import api from '@/api'
 import Movie from '@/models/Movie'
 import DOMPurify from 'dompurify'
 import MoviesSlider from '@/components/core/MoviesSlider'
-import MovieSearchSubheader from '@/components/core/MovieSearchSubheader'
 
 export default {
   name: 'Search',
   components: {
-    MoviesSlider,
-    MovieSearchSubheader
+    MoviesSlider
   },
   data() {
     return {
@@ -72,42 +70,39 @@ export default {
 </script>
 
 <template>
-  <div>
-    <movie-search-subheader />
-    <fw-wrapper>
-      <div v-loading="loading" class="w-full h-full pt-60">
-        <template v-if="totalMovies">
-          <p class="font-medium text-2xl text-black my-4">
-            {{ totalMovies }} movies for: {{ title }}
-          </p>
-          <div v-if="moviesByPage[page]" data-test="slider-wrapper">
-            <movies-slider
-              :movies="moviesByPage[page]"
-              :total-movies="parseInt(totalMovies)"
+  <fw-wrapper>
+    <div v-loading="loading" class="w-full h-full">
+      <template v-if="totalMovies">
+        <p class="font-medium text-2xl text-black my-4">
+          {{ totalMovies }} movies for: {{ title }}
+        </p>
+        <div v-if="moviesByPage[page]" data-test="slider-wrapper">
+          <movies-slider
+            :movies="moviesByPage[page]"
+            :total-movies="parseInt(totalMovies)"
+          />
+          <div class="flex items-center justify-center mt-4">
+            <el-pagination
+              :page-size="10"
+              layout="prev, pager, next"
+              :total="parseInt(totalMovies)"
+              :current-page="page"
+              hide-on-single-page
+              @current-change="handlePageChange"
             />
-            <div class="flex items-center justify-center mt-4">
-              <el-pagination
-                :page-size="10"
-                layout="prev, pager, next"
-                :total="parseInt(totalMovies)"
-                :current-page="page"
-                hide-on-single-page
-                @current-change="handlePageChange"
-              />
-            </div>
           </div>
-        </template>
-        <template v-else>
-          <p
-            class="font-medium text-center text-darkGrey mt-12"
-            data-test="no-movies"
-          >
-            We couldn't find movies with that title. Please search other movie.
-          </p>
-        </template>
-      </div>
-    </fw-wrapper>
-  </div>
+        </div>
+      </template>
+      <template v-else>
+        <p
+          class="font-medium text-center text-darkGrey mt-12"
+          data-test="no-movies"
+        >
+          We couldn't find movies with that title. Please search other movie.
+        </p>
+      </template>
+    </div>
+  </fw-wrapper>
 </template>
 
 <style lang="scss">

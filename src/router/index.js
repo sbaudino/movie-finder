@@ -14,7 +14,10 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Search.vue')
+      import(/* webpackChunkName: "about" */ '../views/Search.vue'),
+    meta: {
+      searchInHeader: true
+    }
   },
   {
     // Catch 404
