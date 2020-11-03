@@ -18,8 +18,7 @@ export default {
     return {
       swiperOption: {
         slidesPerView: 'auto',
-        spaceBetween: 20,
-        loop: true
+        spaceBetween: 20
       },
       showPlotModal: false,
       movieClicked: {}

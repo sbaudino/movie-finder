@@ -21,7 +21,8 @@ module.exports = {
       },
       height: {
         nav: '60px',
-        movieCard: '550px'
+        movieCard: '550px',
+        emptyImage: '420px'
       },
       maxHeight: {
         movieCard: '600px'

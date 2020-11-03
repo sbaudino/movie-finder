@@ -11,6 +11,17 @@ The main purprose here is to write good code, and of course learn. You'll find
 - Code written in **vue.js** with some usual good stuff.
 - Tests: Added a bunch of tests to cover the basics of the app.
 
+## Project settings
+
+There are some extensions and settings for VSCode under .vscode folder to make development easier. That includes:
+
+- Vetur extension
+- Prettier-vscode extension
+- Vscode-eslint extension
+- Format on save setting
+- Auto fix on save setting
+- Tab size and indentation setting
+
 ## Security
 
 A little bit of attention to the security has been put on it. Of course, vue provides a bunch of features [out-of-the-box](https://vuejs.org/v2/guide/security.html):
@@ -34,7 +45,10 @@ This small app has integration with
 
 ## Testing
 
-For this purpose and time-limitations, only **views** and **core-parts** of the app have been tested. That includes
+For this purpose and time-limitations, only **views** and **core-parts** of the app have been tested. That includes:
+
+- Home & Search view
+- Movie model
 
 ## Project setup
 

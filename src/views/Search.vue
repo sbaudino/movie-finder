@@ -43,6 +43,13 @@ export default {
         const response = await api
           .search()
           .getMoviesByTitle(this.title, this.page)
+        // Handle movie not found
+        if (response.Response === 'False') {
+          this.totalMovies = 0
+          this.moviesByPage = {}
+          return
+        }
+
         this.totalMovies = response.totalResults
 
         const promises = response.Search.map(movie =>
@@ -69,24 +76,35 @@ export default {
     <movie-search-subheader />
     <fw-wrapper>
       <div v-loading="loading" class="w-full h-full pt-60">
-        <p class="font-medium text-2xl text-black my-4">
-          {{ totalMovies }} movies for: {{ title }}
-        </p>
-        <div v-if="moviesByPage[page]">
-          <movies-slider
-            :movies="moviesByPage[page]"
-            :total-movies="parseInt(totalMovies)"
-          />
-          <div class="flex items-center justify-center mt-4">
-            <el-pagination
-              :page-size="10"
-              layout="prev, pager, next"
-              :total="parseInt(totalMovies)"
-              :current-page="page"
-              @current-change="handlePageChange"
+        <template v-if="totalMovies">
+          <p class="font-medium text-2xl text-black my-4">
+            {{ totalMovies }} movies for: {{ title }}
+          </p>
+          <div v-if="moviesByPage[page]" data-test="slider-wrapper">
+            <movies-slider
+              :movies="moviesByPage[page]"
+              :total-movies="parseInt(totalMovies)"
             />
+            <div class="flex items-center justify-center mt-4">
+              <el-pagination
+                :page-size="10"
+                layout="prev, pager, next"
+                :total="parseInt(totalMovies)"
+                :current-page="page"
+                hide-on-single-page
+                @current-change="handlePageChange"
+              />
+            </div>
           </div>
-        </div>
+        </template>
+        <template v-else>
+          <p
+            class="font-medium text-center text-darkGrey mt-12"
+            data-test="no-movies"
+          >
+            We couldn't find movies with that title. Please search other movie.
+          </p>
+        </template>
       </div>
     </fw-wrapper>
   </div>

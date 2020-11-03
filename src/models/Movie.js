@@ -7,4 +7,8 @@ export default class Movie {
     this.year = movie.Year
     this.plot = movie.Plot
   }
+
+  hasPoster() {
+    return this.poster !== 'N/A'
+  }
 }
