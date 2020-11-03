@@ -14,7 +14,7 @@ export default {
       if (sanitizedSearch) {
         this.$router.push({
           name: 'Search',
-          query: { title: encodeURI(sanitizedSearch) }
+          query: { title: sanitizedSearch }
         })
       }
       this.search = ''
