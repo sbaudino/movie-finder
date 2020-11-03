@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class Request {
   constructor() {
     this.api = axios.create({
-      baseURL: `http://www.omdbapi.com/?apikey=${process.env.VUE_APP_OMDB_KEY}`,
+      baseURL: `https://www.omdbapi.com/?apikey=${process.env.VUE_APP_OMDB_KEY}`,
       timeout: 10000
     })
   }
