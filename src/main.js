@@ -3,7 +3,15 @@ import App from './App.vue'
 import router from './router'
 import vueMq from 'vue-mq'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import { Button, Select, Option, Input } from 'element-ui'
+import {
+  Button,
+  Select,
+  Option,
+  Input,
+  Loading,
+  Pagination,
+  Dialog
+} from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 import FullWidthWrapper from '@/components/common/FullWidthWrapper'
@@ -31,6 +39,9 @@ Vue.use(Button)
 Vue.use(Select)
 Vue.use(Input)
 Vue.use(Option)
+Vue.use(Loading)
+Vue.use(Pagination)
+Vue.use(Dialog)
 Vue.component('fw-wrapper', FullWidthWrapper) // Wrapper component to keep things centered
 
 new Vue({

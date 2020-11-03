@@ -13,17 +13,18 @@ module.exports = {
       grey: '#A3AEBF',
       darkGrey: '#5A6E8B',
       borderGrey: '#DDE6EE',
-      lightGrey: '#FAFAFA',
-      transparentBlack: '#15212733'
+      lightGrey: '#FAFAFA'
     },
     extend: {
+      spacing: {
+        60: '60px'
+      },
       height: {
         nav: '60px',
-        cta: '80px'
+        movieCard: '550px'
       },
       maxHeight: {
-        image: '400px',
-        imageSmall: '200px'
+        movieCard: '600px'
       },
       maxWidth: {
         block: '600px'

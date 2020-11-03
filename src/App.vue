@@ -13,10 +13,8 @@ export default {
 <template>
   <div id="app">
     <the-navbar />
-    <main class="py-4">
-      <fw-wrapper>
-        <router-view />
-      </fw-wrapper>
+    <main>
+      <router-view />
     </main>
   </div>
 </template>

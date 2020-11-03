@@ -3,7 +3,9 @@
     <fw-wrapper>
       <div class="flex justify-between items-center py-3 h-full">
         <span class="font-medium text-darkGrey">Movie finder app</span>
-        <p class="text-orange">Movie<span class="text-blue">Finder</span></p>
+        <router-link to="/" class="text-orange"
+          >Movie<span class="text-blue">Finder</span></router-link
+        >
       </div>
     </fw-wrapper>
   </nav>

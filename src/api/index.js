@@ -1,12 +1,13 @@
 import Request from './request'
+import SearchApi from './search'
 
 class ApiClient {
   constructor() {
     this.request = new Request()
   }
 
-  searchByTitle(params) {
-    return this.request.call({ method: 'GET', params })
+  search() {
+    return new SearchApi(this.request)
   }
 }
 

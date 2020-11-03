@@ -1,21 +1,33 @@
 <script>
+import DOMPurify from 'dompurify'
+
 export default {
   name: 'MovieSearchForm',
   data() {
     return {
       search: ''
     }
+  },
+  methods: {
+    handleSubmit() {
+      const sanitizedSearch = DOMPurify.sanitize(this.search.trim())
+      if (sanitizedSearch) {
+        this.$router.push({
+          name: 'Search',
+          query: { title: encodeURI(sanitizedSearch) }
+        })
+      }
+      this.search = ''
+    }
   }
 }
 </script>
 
 <template>
-  <form
-    class="max-w-block w-full"
-    @submit.prevent.stop="$emit('search', search)"
-  >
+  <form class="max-w-block w-full" @submit.prevent.stop="handleSubmit">
     <el-input
       v-model="search"
+      autofocus
       clearable
       placeholder="Please input"
       class="input-with-select"
