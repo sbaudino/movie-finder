@@ -15,6 +15,12 @@ const routes = [
     name: 'Search',
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/Search.vue')
+  },
+  {
+    // Catch 404
+    path: '*',
+    component: () =>
+      import(/* webpackChunkName: "404" */ '../views/NotFound.vue')
   }
 ]
 

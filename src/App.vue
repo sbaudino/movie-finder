@@ -1,6 +1,5 @@
 <script>
 import TheNavbar from '@/components/common/TheNavbar'
-import TheFooter from '@/components/common/TheFooter'
 
 export default {
   name: 'App',
